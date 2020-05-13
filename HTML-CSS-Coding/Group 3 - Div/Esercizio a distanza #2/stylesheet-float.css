@@ -1,0 +1,56 @@
+body {
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: 200;
+}
+.main {
+    width: 99.7%;
+    margin: 0;
+    border: 2px solid green;
+}
+.header {
+    text-align: center;
+    background-color: rgb(222, 255, 144);
+    border: 1px solid rgb(58, 58, 58);
+    width: 99.8%;
+    height: 80px;
+    margin-bottom: .7%;
+}
+.content {
+    width: 100%;
+    height: 600px;
+    margin-bottom: .7%;
+}
+.left {
+    text-align: left;
+    background-color: #6666CC;
+    border: 1px solid black;
+    width: 19%;
+    height: 600px;
+    float: left;
+}
+.center {
+    text-align: center;
+    background-color: rgb(208, 242, 255);
+    border: 1px solid black;
+    width: 60%;
+    height: 600px;
+    float: left;
+    margin-left: .8%;
+}
+.right {
+    text-align: right;
+    background-color: #6666CC;
+    border: 1px solid black;
+    width: 19%;
+    height: 600px;
+    float: right; 
+}
+.footer {
+    text-align: center;
+    color: whitesmoke;
+    background-color: rgb(48, 48, 48);
+    border: 1px solid #CCCCCC;
+    width: 99.8%;
+    height: 80px;
+}

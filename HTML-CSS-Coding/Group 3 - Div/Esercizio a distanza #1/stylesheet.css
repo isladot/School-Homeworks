@@ -1,0 +1,55 @@
+body {
+    text-align: center;
+    background-color: white;
+    margin: 0;
+}
+h1 {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.years-style {
+    background-color: aqua;
+}
+.years {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+}
+.years th {
+    width: 320px;
+}   
+.col-box {
+    display: flex;
+    flex-direction: row;
+    margin: 0 1% 0 1%;
+}
+.col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: .5% .7% .5% .7%;
+    width: 320px; 
+    /* ha chiesto di utilizzare i pixel per le dimensioni, dal momento che ci stiamo 
+    esercitando su un tipo di layout statico, ma nell'eventualità che questo vincolo non
+    ci fosse stato avrei utilizzato un layout ibrido, usufruendo anche delle % */
+
+}
+.col img {
+    width: 200px;
+    border: 1px dashed blue;
+}
+.col p {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    text-align: left;
+}
+.minifooter {
+    background-color: rgb(54, 54, 54);
+    border: 1px solid green;
+    color: white;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    padding: 5px;
+    width: 200px;
+}
