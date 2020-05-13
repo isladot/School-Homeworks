@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Tag Block HTML </title>
+        <link rel="icon" href="http://www.iconj.com/ico/h/m/hmuhczm62v.ico">
+        <meta charset="utf-8">
+        <style>
+            body {
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                text-align: center;
+                background-color: #ccc;
+            }
+            table {
+                border: 2px solid black;
+                border-collapse: collapse;
+                text-align: center;
+                padding: 7px;
+            }
+            td {
+                border: 1px solid black;
+                border-collapse: collapse;
+                padding: 7px;
+                background-color: whitesmoke;
+            }
+            th {
+                border: 2px solid black;
+                border-collapse: collapse;
+                text-align: center;
+                padding: 10px;
+                background-color: darkblue;
+                color: white;
+            }
+            a {
+                text-decoration: none;
+                color: black;
+            }
+            #Col1 {
+                background-color: lightskyblue;
+                text-align: center;
+            }
+            #Col2 {
+                text-align: left;
+                padding-right: 15px;
+            }
+            #Col3 {
+                text-align: center;
+                padding: 10px;
+                padding-left: 25px;
+                padding-right: 25px;
+                font-size: 90%;
+            }
+            #Col4 {
+                text-align: center;
+                padding: 10px;
+            }
+            #Def {
+                border: 1px solid black;
+                padding-left: 10px;
+                padding-right: 10px;
+                background-color: yellow;
+                text-align: center;
+                margin: auto;
+                width: fit-content;
+                height: fit-content;
+            }
+            #Footer {
+                padding: 50px 0px 50px 75px;
+                width: 100%;
+                height: auto;
+                background-color: rgb(24, 24, 24);
+                margin-top: 50px;
+            }
+            #Info {
+                text-align: left;
+                font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: 18px;
+                color: white;
+            }
+            #app {
+                height: 40px;
+                width: 40px;
+            }
+            #change {
+                margin-top: 20px;
+                padding: 10px;
+                border: 1px solid black;
+                height: 60px;
+                width: 320px;
+                background-color: lightskyblue;
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: 16px;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+        <h1> Lista dei Tag Block HTML </h1>
+        <p>
+            Nella tabella di seguito troverete tutti i <strong>Tag Block HTML</strong>.<br>
+            Di ciascuno viene fornita una piccola descrizione della funzione che svolge, un esempio e il relativo link per approfondire meglio l'argomento. <br>
+        </p>
+        <hr>
+        <h3> Definizione generale: </h3>
+        <div id="Def">
+        <p>
+            Un <strong>Tag Block</strong> inizia sempre su una nuova linea e occupa l'intera larghezza disponibile.
+        </p>
+        </div>
+        <br>
+        <table align="center">
+            <tr>
+                <th><b>Tag Block</b></th>
+                <th><b>Descrizione</b></th>
+                <th><b>Esempio</b></th>
+                <th><b>Approfondisci</b></th>
+            </tr>
+            <tr>
+                <td id="Col1"><b>address</b></td>
+                <td id="Col2">Definisce le informazioni di contatto dell'autore della pagina/articolo.</td>
+                <td id="Col3"><address>Scritto da: Luca Biagetti<br>Classe: 3BI</address></td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_address.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>article</b></td>
+                <td id="Col2">Definisce un contenuto indipendente e autonomo.</td>
+                <td id="Col3">
+                    <article>
+                        <p>Testo indipendente</p>
+                    </article>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_article.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>aside</b></td>
+                <td id="Col2">Definisce un contenuto correlato al contenuto circostante.</td>
+                <td id="Col3">
+                    <aside>
+                        <h4>La Terra:</h4>
+                        <p>La terra è tonda</p>
+                    </aside>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_aside.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>blockquote</b></td>
+                <td id="Col2">Definisce un virgolettato provienente da un'altra fonte.</td>
+                <td id="Col3">
+                    <blockquote cite="https://www.w3schools.com/">
+                    THE WORLD'S LARGEST WEB DEVELOPER SITE
+                    </blockquote>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_blockquote.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>canvas</b></td>
+                <td id="Col2">Definisce un contenuto grafico, disegnato tramite Script.</td>
+                <td id="Col3">
+                    <canvas id="myCanvas" style="height: 55px"></canvas>
+                    <script>
+                        var c = document.getElementById("myCanvas");
+                        var ctx = c.getContext("2d");
+                        ctx.fillStyle = "#FF0000";
+                        ctx.fillRect(0, 0, 300, 150);
+                    </script>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_canvas.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>dd</b></td>
+                <td id="Col2">Definisce la descrizione del termine all'interno di una lista di descrizioni.</td>
+                <td id="Col3">
+                    <dl>
+                        <dt>Caffè</dt>
+                        <dd>&#8594 <i><b>Bevanda calda nera</b></i></dd>
+                    </dl>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_dd.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>dt</b></td>
+                <td id="Col2">Definisce il termine da descrivere.</td>
+                <td id="Col3">
+                    <dl>
+                        <dt>&#8594 <i><b>Caffè</b></i></dt>
+                        <dd>Bevanda calda nera</dd>
+                    </dl>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_dt.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>dl</b></td>
+                <td id="Col2">Definisce una lista di descrizioni.</td>
+                <td id="Col3">
+                    <dl>
+                        <dt>Caffè</dt>
+                        <dd>Bevanda calda nera</dd>
+                    </dl>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_dl.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>div</b></td>
+                <td id="Col2">Definisce una sezione all'interno del documento HTML.</td>
+                <td id="Col3">
+                    <div style="color:rgb(214, 49, 255);">
+                        Il testo di questa sezione è in violetto.
+                    </div>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_div.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>fieldset</b></td>
+                <td id="Col2">Definisce un gruppo di elementi correlati tra loro in un form.</td>
+                <td id="Col3" style="font-size: 80%;">
+                    <fieldset style="text-align: left;">
+                        <legend>Registrati</legend>
+                        <label for="fname">Nome:</label>
+                        <input type="text" id="fname" name="fname"><br><br>
+                        <label for="lname">Cognome:</label>
+                        <input type="text" id="lname" name="lname"><br><br>
+                        <input type="submit" value="Submit">
+                    </fieldset>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_fieldset.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>figure</b></td>
+                <td id="Col2">Definisce un contenuto grafico indipendente.</td>
+                <td id="Col3">
+                    <figure>
+                        <img src="https://i.imgur.com/TVkCfI1.png" alt="Italia" width="60px" height="40px">
+                    </figure>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/figure.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>figcaption</b></td>
+                <td id="Col2">Definisce la didascalia di un elemento <i>figure</i>.</td>
+                <td id="Col3">
+                    <figure>
+                        <img src="https://i.imgur.com/TVkCfI1.png" alt="Italia" width="60px" height="40px">
+                        <figcaption style="font-size: 10px;">&#8594 Bandiera Italiana</figcaption>
+                    </figure>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/figcaption.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>footer</b></td>
+                <td id="Col2">Definisce il footer di un documento.</td>
+                <td id="Col3"><i>! WARNING: Footer a fondo pagina !</i></td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_footer.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>form</b></td>
+                <td id="Col2">Definisce un form per l'input da parte dell'utente.</td>
+                <td id="Col3" style="font-size: 80%;">
+                    <form>
+                        <fieldset style="text-align: left;">
+                            <legend>Compilare questo form!</legend>
+                            <label for="fname">Nome:</label>
+                            <input type="text" id="fname" name="fname"><br><br>
+                            <label for="lname">Cognome:</label>
+                            <input type="text" id="lname" name="lname"><br><br>
+                            <input type="submit" value="Submit">
+                        </fieldset>
+                    </form>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_form.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>h1/h6</b></td>
+                <td id="Col2">Definisce gli headings da H1 a H6.</td>
+                <td id="Col3">
+                    <h4>Heading H4</h4>
+                    <h6>Heading H6</h6>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_hn.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>header</b></td>
+                <td id="Col2">Definisce un gruppo per i contenuti introduttivi.</td>
+                <td id="Col3" style="font-size: 75%;">
+                    <header>
+                        <h4>Heading più importante</h4>
+                        <h5>Heading meno importante</h5>
+                        <p>Informazioni aggiuntive</p>
+                    </header>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_header.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>hr</b></td>
+                <td id="Col2">Definisce una linea di divisione.</td>
+                <td id="Col3">
+                    <hr>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_hr.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>li</b></td>
+                <td id="Col2">Definisce l'elemento di una lista.</td>
+                <td id="Col3">
+                    <ul style="list-style-type: none;">
+                        <li>Rosso</li>
+                        <li>Verde</li>
+                    </ul>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_li.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>ul</b></td>
+                <td id="Col2">Definisce una lista non ordinata.</td>
+                <td id="Col3">
+                    <ul style="list-style-type: circle;">
+                        <li>Caffè</li>
+                        <li>Latte</li>
+                    </ul>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_ul.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>ol</b></td>
+                <td id="Col2">Definisce una lista ordinata.</td>
+                <td id="Col3">
+                    <ol>
+                        <li>Sale</li>
+                        <li>Zucchero</li>
+                    </ol>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_ol.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>main</b></td>
+                <td id="Col2">Definisce il contenuto principale del documento.</td>
+                <td id="Col3"><i>! WARNING: La tabella stessa che stai visualizzando <br>adesso è il contenuto principale !</i></td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_main.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>nav</b></td>
+                <td id="Col2">Definisce una lista di link per la navigazione.</td>
+                <td id="Col3">
+                    <nav>
+                        <a href="https://www.w3schools.com/" style="color: blue;">Home W3S</a>  |
+                        <a href="https://www.w3schools.com/tags/tag_nav.asp" style="color: blue;">Tag "nav"</a>
+                    </nav>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_nav.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>noscript</b></td>
+                <td id="Col2">Definisce un contenuto alternativo per gli utenti <br>che hanno disabilitato o non supportano gli script</td>
+                <td id="Col3">
+                    <!--
+                    - Dal momento che per fare l'esempio si dovrebbero disattivare gli Script, lo camuffiamo come semplice testo :)
+                    <script>
+                        document.write("Hello World!")
+                    </script>
+                    <noscript>Il tuo browser non supporta Javascript!</noscript>
+                    -->
+                    <i>Il tuo browser non supporta Javascript!</i>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_noscript.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>p</b></td>
+                <td id="Col2">Definisce un paragrafo.</td>
+                <td id="Col3">
+                    <p>Questo è un paragrafo</p>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_p.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>pre</b></td>
+                <td id="Col2">Definisce un testo preformattato.</td>
+                <td id="Col3">
+                    <pre style="text-align: left;">
+                        Questo testo va
+                        a capo senza utilizzare
+                        il tag br
+                    </pre>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_pre.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>section</b></td>
+                <td id="Col2">Definisce una sezione. <i>ex:capitoli</i></td>
+                <td id="Col3">
+                    <section>
+                        <h5>Capitolo 5: Il WWF</h5>
+                        <p>Il WWF è una organizzazzione internazionale..</p>
+                    </section>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_section.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>table</b></td>
+                <td id="Col2">Definisce una tabella.</td>
+                <td id="Col3">
+                    <table align="center">
+                        <tr>
+                            <td>C1</td>
+                            <td>C2</td>
+                        </tr>
+                        <tr>
+                            <td>C3</td>
+                            <td>C4</td>
+                        </tr>
+                    </table>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_table.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>tfoot</b></td>
+                <td id="Col2">Definisce il footer di una tabella.</td>
+                <td id="Col3">
+                    <table align="center">
+                        <tr>
+                            <td>C1</td>
+                            <td>C2</td>
+                        </tr>
+                        <tr>
+                            <td>C3</td>
+                            <td>C4</td>
+                        </tr>
+                        <tfoot style="color:rgb(214, 49, 255);">
+                            <tr>
+                                <td colspan="2">Footer</td>
+                            </tr>
+                        </tfoot>
+                    </table>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_tfoot.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+            <tr>
+                <td id="Col1"><b>video</b></td>
+                <td id="Col2">Definisce un video.</td>
+                <td id="Col3">
+                    <video width="250px" controls>
+                        <source src="https://static.videezy.com/system/resources/previews/000/018/793/original/Bacteria-blue.mp4" type="video/mp4">
+                    </video>
+                </td>
+                <td id="Col4"><a href="https://www.w3schools.com/tags/tag_video.asp" target="_blank" title="Clicca qui per maggiori informazioni."><img id="app" src="https://i.imgur.com/bhcHrGd.png"></a></td>
+            </tr>
+        </table>
+        <button id="change" type="button" onclick="document.location = 'ListaTagInline.html'">Vai alla pagina dedicata ai Tag Inline</button>
+        <div id="Footer">
+            <div id="Info">
+            <ul style="list-style-type: none;">
+                <li>Autore: Luca Biagetti</li>
+                <li>Scuola: ITIS Federico Caffè, Roma</li>
+                <li>Classe: 3BI 2019/2020</li>
+                <li>Info: <a href="mailto:biluca2003@gmail.com" style="color: white;">biluca2003@gmail.com</a></li>
+            </ul>
+            </div>
+        </div>
+    </body>
+</html>
