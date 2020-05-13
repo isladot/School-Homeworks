@@ -1,0 +1,35 @@
+body {
+    background-color: skyblue;
+    text-align: center;
+    margin: 0;
+}
+.page {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    padding-top: 5%;
+}
+.ex5 {
+    background-color: whitesmoke;
+    border: 2px solid red;
+    border-radius: 10px;
+    width: 70%;
+    margin: auto auto 3% auto;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.ex5 p {
+    font-weight: 500;
+}
+.clockbox {
+    background-color: whitesmoke;
+    border: 2px solid green;
+    border-radius: 10px;
+    width: 70%;
+    margin: auto;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.clockbox p {
+    font-weight: 500;
+    font-size: 40px;
+}
