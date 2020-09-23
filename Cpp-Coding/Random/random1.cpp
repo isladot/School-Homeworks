@@ -1,10 +1,12 @@
 #include <iostream>
 #include <cstdlib>
+#include <time.h>
 using namespace std;
 
 int main(){
     const int MAX_DIM = 10;
     int A[10], B[10], bCont = 0;
+    srand(time(0));
     for(int i=0; i<MAX_DIM;i++){
         A[i] = (rand() % 50);
         if((A[i]>=5 && A[i]<=7) || (A[i]>=12 && A[i]<=15)){
@@ -20,4 +22,5 @@ int main(){
     for(int i=0;i<bCont;i++){
         cout<<B[i] <<" ";
     }
+    return 0;
 }
