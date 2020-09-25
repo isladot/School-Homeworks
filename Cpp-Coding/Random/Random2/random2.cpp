@@ -8,11 +8,11 @@ int main(){
     int A[MAX_DIM], B[MAX_DIM], aCont = 0, bCont = 0, n;
     srand(time(0));
     for(int i=0; i<MAX_DIM;i++){
-        n = (rand() % 100) + 1;
-        if(n>50){
+        n = (rand() % 50) + 1;
+        if(n<10){
             A[aCont] = n;
             aCont++;
-        } else {
+        } else if(n>50) {
             B[bCont] = n;
             bCont++;
         }
