@@ -48,7 +48,6 @@ int main(){
         pDay = x/MATRIX_ROWS;
         cout<<"Media giornaliera: " <<pDay <<endl;
     }
-    cout<<pWeek<<endl;
     pWeek = pWeek/(MATRIX_ROWS*MATRIX_COLS);
     cout<<"Media settimanale: " <<pWeek <<endl;
 }
