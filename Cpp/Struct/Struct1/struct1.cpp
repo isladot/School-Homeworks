@@ -2,31 +2,32 @@
 #include <string>
 using namespace std;
 
-struct persona {
+const int CLASSROOM_STUDENTS = 3;
+
+struct student {
     string surname;
-    string name;
     int eta;
 };
 
-int main(){
-    persona pers1, pers2;
-    cout<<"Inserire il cognome della persona: ";
-    cin>>pers1.surname;
-    cout<<"Inserire il nome della persona: ";
-    cin>>pers1.name;
-    cout<<"Inserire l'eta della persona: ";
-    cin>>pers1.eta;
-    //Pers2
-    cout<<"Inserire il cognome della persona: ";
-    cin>>pers2.surname;
-    cout<<"Inserire il nome della persona: ";
-    cin>>pers2.name;
-    cout<<"Inserire l'eta della persona: ";
-    cin>>pers2.eta;
+struct student classroom[CLASSROOM_STUDENTS];
 
-    if(pers1.eta>pers2.eta){
-        cout<<"Il piu' grande e' " <<pers1.cognome <<endl;
-    } else{
-        cout<<"Il piu' grande e' " <<pers2.cognome <<endl;
+int main(){
+    int max=0, min=0, mid=0;
+    for(int i=0; i<CLASSROOM_STUDENTS; i++){
+        cout<<"Inserire cognome studente " <<i+1 <<": ";
+        cin>>classroom[i].surname;
+        cout<<"Inserire eta' studente " <<i+1 <<": ";
+        cin>>classroom[i].eta;
+        //Checking max and min
+        if(classroom[i].eta>classroom[max].eta){
+            max=i;
+        }
+        if(classroom[i].eta<classroom[min].eta){
+            min=i;
+        }
+        if(classroom[i].eta<classroom[max].eta && classroom[i].eta>classroom[min].eta){
+            mid=i;
+        }
     }
+    cout<<"MID: " <<classroom[mid].surname <<endl;
 }
