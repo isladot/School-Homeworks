@@ -18,16 +18,17 @@ int main(){
         cin>>classroom[i].surname;
         cout<<"Inserire eta' studente " <<i+1 <<": ";
         cin>>classroom[i].eta;
-        //Checking max and min
-        if(classroom[i].eta>classroom[max].eta){
-            max=i;
-        }
-        if(classroom[i].eta<classroom[min].eta){
-            min=i;
-        }
-        if(classroom[i].eta<classroom[max].eta && classroom[i].eta>classroom[min].eta){
-            mid=i;
-        }
+    }
+    //Checks
+    for(int i=0; i<CLASSROOM_STUDENTS; i++){
+        if(classroom[i].eta>classroom[max].eta) max=i;
+    }
+    for(int i=0; i<CLASSROOM_STUDENTS; i++){
+        if(classroom[i].eta<classroom[min].eta) min=i;
+    }
+    for(int i=0; i<CLASSROOM_STUDENTS; i++){
+        if(classroom[i].eta<classroom[max].eta && classroom[i].eta>classroom[min].eta) mid=i;
+
     }
     cout<<"MID: " <<classroom[mid].surname <<endl;
 }
