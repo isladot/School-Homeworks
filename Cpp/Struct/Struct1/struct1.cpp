@@ -1,3 +1,10 @@
+/*
+Eseguire il seguente programma: definire una truttura di tipo studente, 
+con un campo cognome e un campo età; leggere in input tre studenti 
+con età diversa tra loro e stampare il cognome dello studente che è nè il più piccolo nè il più grande. 
+Per esempio se fosse mario 18, giulio 19, gianni 17, andrebbe stampato mario.
+*/
+
 #include <iostream>
 #include <string>
 using namespace std;
