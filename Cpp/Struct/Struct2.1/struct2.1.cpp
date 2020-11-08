@@ -106,6 +106,7 @@ void pay(){
     strftime(date, 50, "%d%m%y", current_tm);
 
     char surname[SURNAME_MAX_CHARS];
+    bool exist = false;
     float amount;
     cout<<"Inserire il cognome dell'iscritto da aggiornare: ";
     cin>>surname;
@@ -113,18 +114,25 @@ void pay(){
     cin>>amount;
     for(int i=0;i<current_subs;i++){
         if(forum[i].surname == surname){
-            if(amount == PAYMENT){
-                forum[i].balance=PAYMENT;
-                forum[i].date_pay=date;
-            } else if(amount == 0){
-                forum[i].balance=amount;
-                forum[i].date_advance=date;
-            } else {
-                forum[i].balance+=amount;
-                forum[i].date_advance=date;
-            }
+            exist=true;
         }
     }
+    if(exist){
+        for(int i=0;i<current_subs;i++){
+            if(forum[i].surname == surname){
+                if(amount == PAYMENT){
+                    forum[i].balance=PAYMENT;
+                    forum[i].date_pay=date;
+                } else if(amount == 0){
+                    forum[i].balance=amount;
+                    forum[i].date_advance=date;
+                } else {
+                    forum[i].balance+=amount;
+                    forum[i].date_advance=date;
+                }
+            }
+        }
+    } else cout<<"Utente inesistente."<<endl;
 }
 
 void have_to_pay(){
