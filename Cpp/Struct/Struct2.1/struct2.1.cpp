@@ -53,7 +53,13 @@ int main(){
     //Menu
     char option;
     do{
-        cout<<endl <<"Selezionare l'opzione desiderata: ";
+        cout<<"- a: Aggiorna un pagamento." <<endl 
+            <<"- b: Stampa gli utenti che devono ancora completare il pagamento." <<endl
+            <<"- c: Inserisci un nuovo iscritto." <<endl
+            <<"- d: Elimina un iscritto." <<endl
+            <<"- q: Termina il programma." <<endl;
+
+        cout<<"Selezionare l'opzione desiderata: ";
         cin>>option;
         cout<<endl;
         switch(option){
