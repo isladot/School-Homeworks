@@ -1,1 +1,8 @@
+#Visual Studio Code related Files.
 .vscode
+
+#C++ compiled files.
+*.exe
+
+#HTML dir.
+HTML
