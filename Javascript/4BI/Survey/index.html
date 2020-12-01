@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Survey</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js"></script>
+</head>
+<body>
+    <h1>Stati del processore:</h1>
+    <div class="questions-list">
+        <form class="question" id="new">
+            <strong>Cosa si intende per stato "new"?</strong><br>
+            <input type="radio" id="q1a1" name="new"> Processo appena creato.<br>
+            <input type="radio" id="q1a2" name="new"> Processo appena caricato in memoria.<br>
+            <input type="radio" id="q1a3" name="new"> Processo appena dichiarato.<br>
+        </form>
+        <form class="question" id="running">
+            <strong>Cosa si intende per stato "running"?</strong><br>
+            <input type="radio" id="q2a1" name="new"> Processo in esecuzione.<br>
+            <input type="radio" id="q2a2" name="new"> Processo appena caricato in memoria.<br>
+            <input type="radio" id="q2a3" name="new"> Processo sta correndo.<br>
+        </form>
+        <form class="question" id="waiting">
+            <strong>Cosa si intende per stato "waiting"?</strong><br>
+            <input type="radio" id="q3a1" name="new"> Processo sta dormendo.<br>
+            <input type="radio" id="q3a2" name="new"> Processo sta caricando.<br>
+            <input type="radio" id="q3a3" name="new"> Processo in attesa di un input.<br>
+        </form>
+        <form class="question" id="terminated">
+            <strong>Cosa si intende per stato "terminated"?</strong><br>
+            <input type="radio" id="q4a1" name="new"> Processo morto.<br>
+            <input type="radio" id="q4a2" name="new"> Processo sta aspettando in memoria.<br>
+            <input type="radio" id="q4a3" name="new"> Processo ha terminato la propria esecuzione.<br>
+        </form>
+    </div>
+    <button onclick="calculate()">Calcola punteggio.</button>
+</body>
+</html>
