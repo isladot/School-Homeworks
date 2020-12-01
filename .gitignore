@@ -4,5 +4,8 @@
 #C++ compiled files.
 *.exe
 
+#C++ txt files.
+Cpp/**/*.txt
+
 #HTML dir.
 HTML
