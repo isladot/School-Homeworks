@@ -27,10 +27,11 @@ student students[MAX_STUDENTS];
 int main(){
     float average = 0;
     fstream input;
-
+    
+    //Open file.
     input.open("input.txt", ios::in);
 
-    //Read the file.
+    //Read file.
     while(!input.eof()){
         //Get ages and surnames from file and put them in students records array.
         input>>students[current_students].age >>students[current_students].surname;
@@ -48,6 +49,9 @@ int main(){
            cout<<students[i].surname <<": " <<students[i].age <<endl;
        }
     }
+
+    //Close file.
+    input.close();
 
     return 0;
 }
