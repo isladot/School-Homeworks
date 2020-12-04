@@ -3,7 +3,7 @@ Exercises carried out as homework assigned by teachers.
 They will be divided by topic and school year.
 
 ### C++ programs
-Subject: Computer Science
+Subject: Computer Science.
 
 ### Javascript scripts
-Subject: TPS (Technologies and design of computer systems).
+Subject: Technologies and design of computer systems.
