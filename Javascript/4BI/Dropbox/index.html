@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropbox</title>
+    <script src="./script.js"></script>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <form class="choose-site">
+        <select id="site-to-choose">
+            <option selected>selezionare</option>
+            <option value="1">La Stampa</option>
+            <option value="2">Repubblica</option>
+            <option value="3">Corriere</option>
+            <option value="4">Libero</option>
+            <option value="5">il Giornale</option>
+        </select>
+        <input id="site-to-choose-button" type="button" value="Vai al sito!" onclick="launch_site()">
+    </form>
+    <div class="iframe-box">
+        <iframe id="iframe" src="" frameborder="0" class="iframe"></iframe>
+    </div>
+</body>
+
+</html>
