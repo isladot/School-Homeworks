@@ -49,7 +49,7 @@ void sort_table(){
 
     for(int i=0; i<current_people; i++){
         for(int j=i+1; j<current_people; j++){
-            if(people[i].surname > people[j].surname){
+            if(people[i].age > people[j].age){
                 tmp = people[i];
                 people[i] = people[j];
                 people[j] = tmp;
@@ -60,6 +60,6 @@ void sort_table(){
 
 void print_overage(){
     for(int i=0; i<current_people; i++){
-        if(people[i].age >= 18) cout<<people[i].surname <<" " <<people[i].name <<endl;
+        if(people[i].age >= 18) cout<<people[i].surname <<" " <<people[i].name <<" " <<people[i].age <<endl;
     }
 }
