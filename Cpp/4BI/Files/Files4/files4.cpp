@@ -2,6 +2,7 @@
 Inserire i dati in un file e caricare i dati da file su tabella.
 I campi del file sono:
 - Cognome, Località di provenienza, età, altezza
+Inoltre aggiungere un altro punto: scrivere i record con età superiore a 18 su un file.
 */
 
 #include <iostream>
@@ -29,6 +30,7 @@ void print_mid_by_hometown(string home);
 void print_search_girl(string target);
 void print_sorted_girls();
 int print_greater_delta_height(float delta, float height);
+void save_overage_girls();
 
 int main(){
     //Files.
@@ -51,7 +53,8 @@ int main(){
             <<"- 1: Stampa l'eta' media delle ragazze da una localita', data in input." <<endl 
             <<"- 2: Stampa la localita' di provenienza e l'eta' di una ragazza." <<endl
             <<"- 3: Stampa in ordine di eta' le ragazze." <<endl
-            <<"- 4: Stampa la quantita' di ragazze con una differenza di altezza DELTA." <<endl;
+            <<"- 4: Stampa la quantita' di ragazze con una differenza di altezza DELTA." <<endl
+            <<"- 5: Salva su file i dati delle ragazze maggiorenni." <<endl;
 
         cout<<"Selezionare l'opzione desiderata: ";
         cin>>option;
@@ -87,8 +90,11 @@ int main(){
                     cin>>height;
                     cout<<"Inserire il delta: ";
                     cin>>delta;
-                    cout<<"La quantita' di ragazze con una differenza di " <<delta <<" rispetto a " <<height <<" e': " <<print_greater_delta_height(delta, height) <<endl;
+                    cout<<"La quantita' di ragazze con una differenza di almeno " <<delta <<" rispetto a " <<height <<" e': " <<print_greater_delta_height(delta, height) <<endl;
                 }
+                break;
+            case 5:
+                save_overage_girls();
                 break;
             default:
                 cout<<"Opzione non disponibile." <<endl;
@@ -110,11 +116,13 @@ void print_mid_by_hometown(string home){
         if(girls[i].hometown == home){
             average_age += girls[i].age;
             greater_amount++;
-        }
+        } else greater_amount = -1;
     }
 
-    average_age /= greater_amount;
-    cout<<"L'eta' media delle ragazze proveninenti da " <<home <<" e': " <<average_age <<endl;
+    if(greater_amount != -1){
+        average_age /= greater_amount;
+        cout<<"L'eta' media delle ragazze proveninenti da " <<home <<" e': " <<average_age <<endl;
+    } else cout<<"Citta' non trovata." <<endl;
 }
 
 void print_search_girl(string target){
@@ -158,4 +166,17 @@ int print_greater_delta_height(float delta, float height){
     }
 
     return different_cont;
+}
+
+void save_overage_girls(){
+    ofstream output;
+    output.open("output.txt");
+
+    for(int i=0; i<current_girls; i++){
+        if(girls[i].age > 18){
+            output<<girls[i].surname <<" " <<girls[i].hometown <<" " <<girls[i].age <<" " <<girls[i].height <<endl;
+        }
+    }
+
+    cout<<"Salvataggio effettuato con successo." <<endl;
 }
