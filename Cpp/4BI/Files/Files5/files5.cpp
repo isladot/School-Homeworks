@@ -1,3 +1,12 @@
+/*
+Dato un file in input contenente i seguenti dati dei dipendenti di un'azienda:
+Nome, Cognome, Anzianità, Stipendio.
+Scrivi un programma che:
+- Carichi i dati del file in una tabella.
+- Crei un nuovo file contenente nome e cognome dei dipendenti con salario > €1500.
+- Data in input un anzianità, stampi nome e cognome dei dipendenti aventi tale anzianità.
+*/
+
 #include <string>
 #include <fstream>
 #include <iostream>
