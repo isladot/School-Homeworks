@@ -1,4 +1,5 @@
 #include <iostream>
+#include <math.h>
 using namespace std;
 
 class Triangle {
@@ -24,6 +25,13 @@ class Triangle {
         //Get perimeter.
         float perimeter(){
             return (side1+side2+side3);
+        }
+
+        //Get area.
+        float area(){
+            //Semiperimeter.
+            float p = perimeter()/2;
+            return sqrt(p*(p-side1)*(p-side2)*(p-side3));
         }
 };
 
@@ -52,6 +60,7 @@ int main(){
                     cin>>a;
                     Triangle triangle(a);
                     cout<<"Perimetro: " <<triangle.perimeter() <<endl;
+                    cout<<"Area: " <<triangle.area() <<endl;
                 }
                 break;
             case 2:
@@ -61,6 +70,7 @@ int main(){
                     cin>>a >>b;
                     Triangle triangle(a, b);
                     cout<<"Perimetro: " <<triangle.perimeter() <<endl;
+                    cout<<"Area: " <<triangle.area() <<endl;
                 }
                 break;
             case 3:
@@ -70,6 +80,7 @@ int main(){
                     cin>>a >>b >>c;
                     Triangle triangle(a, b, c);
                     cout<<"Perimetro: " <<triangle.perimeter() <<endl;
+                    cout<<"Area: " <<triangle.area() <<endl;
                 }
                 break;
             default:
