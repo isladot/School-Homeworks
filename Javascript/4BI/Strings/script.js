@@ -16,7 +16,7 @@ function validateForm() {
   //Validating surname.
   if (inputSurname.value == '' || inputSurname.value == null) {
     alert('Si prega di inserire un cognome valido.');
-    inputName.classList.remove('good');
+    inputSurname.classList.remove('good');
     inputSurname.classList.add('error');
   } else {
     inputSurname.classList.remove('error');
@@ -29,7 +29,7 @@ function validateForm() {
     !inputEmail.value.includes('@' && '.')
   ) {
     alert('Si prega di inserire un indirizzo email valido.');
-    inputName.classList.remove('good');
+    inputEmail.classList.remove('good');
     inputEmail.classList.add('error');
   } else {
     inputEmail.classList.remove('error');
