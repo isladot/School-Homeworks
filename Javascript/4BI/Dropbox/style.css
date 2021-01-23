@@ -1,27 +1,29 @@
-body, input, select{
-    font-family: "Montserrat";
+body,
+input,
+select {
+  font-family: 'Montserrat';
 }
-.choose-site{
-    width: 100%;
-    height: fit-content;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
+.choose-site {
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
 }
-#site-to-choose{
-    padding: 5px;
+#site-to-choose {
+  padding: 5px;
 }
-#site-to-choose-button{
-    margin: 10px;
-    padding: 5px 10px;
+#site-to-choose-button {
+  margin: 10px;
+  padding: 5px 10px;
 }
-.iframe-box{
-    display: flex;
-    justify-content: center;
+.iframe-box {
+  display: flex;
+  justify-content: center;
 }
-.iframe{
-    width: 80%;
-    height: 400px;
-    border: 1.5px solid rgb(52, 177, 94);
+.iframe {
+  width: 80%;
+  height: 400px;
+  border: 1.5px solid rgb(52, 177, 94);
 }

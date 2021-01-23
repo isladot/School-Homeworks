@@ -1,11 +1,11 @@
-body{
-    font-family: "Montserrat";
+body {
+  font-family: 'Montserrat';
 }
 
-h1{
-    text-align: center;
+h1 {
+  text-align: center;
 }
 
-.question{
-    margin-bottom: 20px;
+.question {
+  margin-bottom: 20px;
 }

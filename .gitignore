@@ -7,5 +7,5 @@
 #C++ txt files.
 Cpp/**/*.txt
 
-#HTML dir.
-HTML
+#Node modules.
+node_modules

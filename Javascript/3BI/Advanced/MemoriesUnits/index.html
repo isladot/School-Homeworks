@@ -1,63 +1,63 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Javascript Ex.1 14.05.2020</title>
-        <meta charset="UTF-8">
-        <link rel="stylesheet" href="style.css">
-        <script src="script.js"></script>
-    </head>
-    <body>
-        <h1>Equivalenze di memoria</h1>
-        <div class="page">
-            <div class="content">
-                <div class="input">
-                    <div class="num">
-                        <label for="num">Inserire il numero: </label>
-                        <input type="number" id="num">
-                    </div>
-                    <div class="unit">
-                        <label for="startunit">Unità di misura di partenza: </label>
-                        <select id="startunit" onload="novalue()">
-                            <option value="B">Byte</option>
-                            <option value="KB">Kilobyte</option>
-                            <option value="MB">Megabyte</option>
-                            <option value="GB">Gigabyte</option>
-                            <option value="TB">Terabyte</option>
-                            <option value="PB">Petabyye</option>
-                            <option value="EB">Exabyte</option>
-                            <option value="KiB">Kibibyte</option>
-                            <option value="MiB">Mebibyte</option>
-                            <option value="GiB">Gibibyte</option>
-                            <option value="TiB">Tebibyte</option>
-                            <option value="PiB">Pebibyte</option>
-                            <option value="EiB">Exbibyte</option>
-                        </select>
-                        <br><br>
-                        <label for="arriveunit">Unità di misura di arrivo: </label>
-                        <select id="arriveunit" onload="novalue()">
-                            <option value="aB">Byte</option>
-                            <option value="aKB">Kilobyte</option>
-                            <option value="aMB">Megabyte</option>
-                            <option value="aGB">Gigabyte</option>
-                            <option value="aTB">Terabyte</option>
-                            <option value="aPB">Petabyye</option>
-                            <option value="aEB">Exabyte</option>
-                            <option value="aKiB">Kibibyte</option>
-                            <option value="aMiB">Mebibyte</option>
-                            <option value="aGiB">Gibibyte</option>
-                            <option value="aTiB">Tebibyte</option>
-                            <option value="aPiB">Pebibyte</option>
-                            <option value="aEiB">Exbibyte</option>
-                        </select>
-                    </div>
-                </div>
-                <div class="button">
-                    <button type="button" onclick="converti()">Converti!</button>
-                </div>
-                <div class="output">
-                    <p>Risultato: <span id="result"></span></p>
-                </div>
-            </div>
+  <head>
+    <title>Javascript Ex.1 14.05.2020</title>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+  <body>
+    <h1>Equivalenze di memoria</h1>
+    <div class="page">
+      <div class="content">
+        <div class="input">
+          <div class="num">
+            <label for="num">Inserire il numero: </label>
+            <input type="number" id="num" />
+          </div>
+          <div class="unit">
+            <label for="startunit">Unità di misura di partenza: </label>
+            <select id="startunit" onload="novalue()">
+              <option value="B">Byte</option>
+              <option value="KB">Kilobyte</option>
+              <option value="MB">Megabyte</option>
+              <option value="GB">Gigabyte</option>
+              <option value="TB">Terabyte</option>
+              <option value="PB">Petabyye</option>
+              <option value="EB">Exabyte</option>
+              <option value="KiB">Kibibyte</option>
+              <option value="MiB">Mebibyte</option>
+              <option value="GiB">Gibibyte</option>
+              <option value="TiB">Tebibyte</option>
+              <option value="PiB">Pebibyte</option>
+              <option value="EiB">Exbibyte</option>
+            </select>
+            <br /><br />
+            <label for="arriveunit">Unità di misura di arrivo: </label>
+            <select id="arriveunit" onload="novalue()">
+              <option value="aB">Byte</option>
+              <option value="aKB">Kilobyte</option>
+              <option value="aMB">Megabyte</option>
+              <option value="aGB">Gigabyte</option>
+              <option value="aTB">Terabyte</option>
+              <option value="aPB">Petabyye</option>
+              <option value="aEB">Exabyte</option>
+              <option value="aKiB">Kibibyte</option>
+              <option value="aMiB">Mebibyte</option>
+              <option value="aGiB">Gibibyte</option>
+              <option value="aTiB">Tebibyte</option>
+              <option value="aPiB">Pebibyte</option>
+              <option value="aEiB">Exbibyte</option>
+            </select>
+          </div>
         </div>
-    </body>
+        <div class="button">
+          <button type="button" onclick="converti()">Converti!</button>
+        </div>
+        <div class="output">
+          <p>Risultato: <span id="result"></span></p>
+        </div>
+      </div>
+    </div>
+  </body>
 </html>
