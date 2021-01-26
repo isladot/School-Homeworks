@@ -4,12 +4,13 @@ using namespace std;
 
 class CC {
     string owner, id;
-    float balance;
+    float balance, interest_rate;
 
     public:
         //Balance amount init.
-        CC(float init_balance){
+        CC(float init_balance, float init_interest_rate){
             balance = init_balance;
+            interest_rate = init_interest_rate;
         }
 
         //Get some money.
@@ -33,7 +34,8 @@ class CC {
         void print_info(){
             cout<<"Intestatario: " <<owner <<endl
                 <<"Numero conto: " <<id <<endl
-                <<"Saldo attuale: " <<balance <<endl;
+                <<"Saldo attuale: " <<balance <<endl
+                <<"Interesse attuale: " <<interest_rate <<endl;
         }
 
         //Register CC informations.
@@ -42,12 +44,25 @@ class CC {
             cin>>owner;
             cout<<"Inserire numero conto: ";
             cin>>id;
+            cout<<"Inserire il tasso di interesse: ";
+            cin>>interest_rate;
+        }
+
+        //Modify interest rate.
+        void modify_interest_rate(float new_interest_rate){
+            interest_rate = new_interest_rate;
+        }
+
+        //Apply interest to balance.
+        void apply_interest(){
+            balance += balance / 100 * interest_rate;
+            cout<<"Saldo attuale: " <<balance <<endl;
         }
 };
 
 int main(){
     //CC init.
-    CC bill(0);
+    CC bill(0, 0);
     bill.register_info();
 
     //Menu.
@@ -57,7 +72,9 @@ int main(){
             <<"- 0: Termina il programma." <<endl
             <<"- 1: Prelievo." <<endl 
             <<"- 2: Versameto." <<endl
-            <<"- 3: Stampa informazioni relative al conto." <<endl;
+            <<"- 3: Stampa informazioni relative al conto." <<endl
+            <<"- 4: Modifica il tasso di interesse." <<endl
+            <<"- 5: Applica il tasso di interesse attuale al saldo." <<endl;
 
         cout<<"Selezionare l'opzione desiderata: ";
         cin>>option;
@@ -85,6 +102,17 @@ int main(){
                 break;
             case 3:
                 bill.print_info();
+                break;
+            case 4:
+                {
+                    float new_interest_rate;
+                    cout<<"Inserire il nuovo tasso di interesse: ";
+                    cin>>new_interest_rate;
+                    bill.modify_interest_rate(new_interest_rate);
+                }
+                break;
+            case 5:
+                bill.apply_interest();
                 break;
             default:
                 cout<<"Opzione non disponibile." <<endl;
