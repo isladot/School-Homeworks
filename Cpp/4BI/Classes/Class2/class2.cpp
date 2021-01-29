@@ -1,10 +1,51 @@
 #include <iostream>
 #include <string>
+#include <ctime>
 using namespace std;
+
+//N. of max history items.
+const int MAX_HISTORY_ITEMS = 10;
+//N. of current history items registered.
+int current_history_items = 0;
+
+//Bill history item.
+struct history_item {
+    string date;
+    string import;
+};
+
+//When history reach max supported items, delete the oldest.
+void delete_oldest_history_item(history_item history[MAX_HISTORY_ITEMS]){
+    for(int i=0; i<current_history_items; i++){
+        history[i] = history[i+1];
+    }
+    current_history_items--;
+}
+
+//Register process.
+void register_process(history_item history[MAX_HISTORY_ITEMS], char operation, float amount){
+    //Getting current date.
+    time_t now = time(0);
+    string date = ctime(&now);
+
+    if(current_history_items != MAX_HISTORY_ITEMS-1){
+        history[current_history_items].date = date;
+        history[current_history_items].import = operation + to_string(amount);
+        current_history_items++;
+    } else {
+        delete_oldest_history_item(history);
+        history[current_history_items].date = date;
+        history[current_history_items].import = operation + to_string(amount);
+        current_history_items++;
+    }
+}
 
 class CC {
     string owner, id;
     float balance, interest_rate;
+
+    //Array of Bill items records.
+    history_item history[MAX_HISTORY_ITEMS];
 
     public:
         //Balance amount init.
@@ -13,21 +54,39 @@ class CC {
             interest_rate = init_interest_rate;
         }
 
-        //Get some money.
-        void get_money(float amount){
-            if(balance >= amount){
+        //Withdrawal money.
+        void withdrawal(float amount){
+            //Getting current date.
+            time_t now = time(0);
+            string date = ctime(&now);
+
+            if(balance >= amount && amount > 0){
                 balance -= amount;
                 cout<<"Saldo attuale: " <<balance <<endl;
+
+                register_process(history, '-', amount);
+            } else if(amount < 0) {
+                cout<<"Importo inserito non valido" <<endl;
             } else {
                 cout<<"Non e' possibile effettuare l'operazione desiderata, saldo insufficiente." <<endl
                     <<"Saldo attuale: " <<balance <<endl;
-            }   
+            }
         }
 
-        //Put some money.
-        void put_money(float amount){
-            balance += amount;
+        //Deposit money.
+        void deposit(float amount){
+            //Getting current date.
+            time_t now = time(0);
+            string date = ctime(&now);
+
+            if(amount > 0){
+                balance += amount;
             cout<<"Saldo attuale: " <<balance <<endl;
+            } else {
+                cout<<"Importo inserito non valido." <<endl;
+            }
+
+            register_process(history, '+', amount);
         }
 
         //Print CC informations.
@@ -58,6 +117,14 @@ class CC {
             balance += balance / 100 * interest_rate;
             cout<<"Saldo attuale: " <<balance <<endl;
         }
+
+        //Print bill history.
+        void print_bill_history(){
+            for(int i=0; i<current_history_items; i++){
+                cout<<"Data: " <<history[i].date <<"Operazione: " <<history[i].import <<endl
+                    <<"-" <<endl;
+            }
+        }
 };
 
 int main(){
@@ -74,7 +141,8 @@ int main(){
             <<"- 2: Versameto." <<endl
             <<"- 3: Stampa informazioni relative al conto." <<endl
             <<"- 4: Modifica il tasso di interesse." <<endl
-            <<"- 5: Applica il tasso di interesse attuale al saldo." <<endl;
+            <<"- 5: Applica il tasso di interesse attuale al saldo." <<endl
+            <<"- 6: Stampa l'elenco delle operazioni effettuate." <<endl;
 
         cout<<"Selezionare l'opzione desiderata: ";
         cin>>option;
@@ -89,7 +157,7 @@ int main(){
                     float amount;
                     cout<<"Inserire la quantita' di denaro che si desidera prelevare: ";
                     cin>>amount;
-                    bill.get_money(amount);
+                    bill.withdrawal(amount);
                 }
                 break;
             case 2:
@@ -97,7 +165,7 @@ int main(){
                     float amount;
                     cout<<"Inserire la quantita' di denaro che si desidera versare: ";
                     cin>>amount;
-                    bill.put_money(amount);
+                    bill.deposit(amount);
                 }
                 break;
             case 3:
@@ -113,6 +181,9 @@ int main(){
                 break;
             case 5:
                 bill.apply_interest();
+                break;
+            case 6:
+                bill.print_bill_history();
                 break;
             default:
                 cout<<"Opzione non disponibile." <<endl;
