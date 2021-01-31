@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <ctime>
 using namespace std;
@@ -24,17 +25,21 @@ void delete_oldest_history_item(history_item history[MAX_HISTORY_ITEMS]){
 
 //Register process.
 void register_process(history_item history[MAX_HISTORY_ITEMS], char operation, float amount){
-    //Getting current date.
-    time_t now = time(0);
-    string date = ctime(&now);
+    //Getting and parsing date.
+    char current_date[11];
+    time_t current_time;
+    tm * current_tm;
+    time(&current_time);
+    current_tm = localtime(&current_time);
+    strftime(current_date, 11, "%Y/%m/%d", current_tm);
 
     if(current_history_items != MAX_HISTORY_ITEMS-1){
-        history[current_history_items].date = date;
+        history[current_history_items].date = current_date;
         history[current_history_items].import = operation + to_string(amount);
         current_history_items++;
     } else {
         delete_oldest_history_item(history);
-        history[current_history_items].date = date;
+        history[current_history_items].date = current_date;
         history[current_history_items].import = operation + to_string(amount);
         current_history_items++;
     }
@@ -56,10 +61,6 @@ class CC {
 
         //Withdrawal money.
         void withdrawal(float amount){
-            //Getting current date.
-            time_t now = time(0);
-            string date = ctime(&now);
-
             if(balance >= amount && amount > 0){
                 balance -= amount;
                 cout<<"Saldo attuale: " <<balance <<endl;
@@ -75,10 +76,6 @@ class CC {
 
         //Deposit money.
         void deposit(float amount){
-            //Getting current date.
-            time_t now = time(0);
-            string date = ctime(&now);
-
             if(amount > 0){
                 balance += amount;
             cout<<"Saldo attuale: " <<balance <<endl;
@@ -121,8 +118,26 @@ class CC {
         //Print bill history.
         void print_bill_history(){
             for(int i=0; i<current_history_items; i++){
-                cout<<"Data: " <<history[i].date <<"Operazione: " <<history[i].import <<endl
-                    <<"-" <<endl;
+                cout<<"Data: " <<history[i].date <<" | Operazione: " <<history[i].import <<endl;
+            }
+        }
+
+        //Save bill history.
+        void save_bill_history(){
+            if(current_history_items > 0){
+                //Open file..
+                ofstream output;
+                output.open("output.txt");
+
+                for(int i=0; i<current_history_items; i++){
+                    output<<"Data: " <<history[i].date <<" | Operazione: " <<history[i].import <<endl;
+                }
+                cout<<"Salvataggio effettuato con successo." <<endl;
+
+                //Close file.
+                output.close();
+            } else {
+                cout<<"Non sono state effettuate operazioni." <<endl;
             }
         }
 };
@@ -142,7 +157,8 @@ int main(){
             <<"- 3: Stampa informazioni relative al conto." <<endl
             <<"- 4: Modifica il tasso di interesse." <<endl
             <<"- 5: Applica il tasso di interesse attuale al saldo." <<endl
-            <<"- 6: Stampa l'elenco delle operazioni effettuate." <<endl;
+            <<"- 6: Stampa l'elenco delle operazioni effettuate." <<endl
+            <<"- 7: Salva l'elenco delle operazioni effettuate." <<endl;
 
         cout<<"Selezionare l'opzione desiderata: ";
         cin>>option;
@@ -184,6 +200,9 @@ int main(){
                 break;
             case 6:
                 bill.print_bill_history();
+                break;
+            case 7:
+                bill.save_bill_history();
                 break;
             default:
                 cout<<"Opzione non disponibile." <<endl;
