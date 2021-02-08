@@ -15,8 +15,6 @@ class Student {
     int notes_amount = 0 ;
     float notes_sum = 0;
 
-    
-
     //Notes vector.
     vector<vote> notes;
 
@@ -132,6 +130,7 @@ class Classroom {
 int main(){
     //Classroom init.
     Classroom classroom("4BI");
+    
     //Menu.
     int option;
     do{
