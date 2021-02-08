@@ -12,7 +12,6 @@ struct vote {
 class Student {
     //Student attributes.
     string surname, name, address, grade;
-    int notes_amount = 0 ;
     float notes_sum = 0;
 
     //Notes vector.
@@ -35,7 +34,6 @@ class Student {
             if(0 < new_vote.note <= 10){
                 notes.push_back(new_vote);
                 notes_sum += new_vote.note;
-                notes_amount++;
                 
                 cout<<"Voto registrato correttamente." <<endl;
             } else {
@@ -47,7 +45,20 @@ class Student {
             cout<<"Nome: " <<name <<endl
                 <<"Cognome: " <<surname <<endl
                 <<"Indirizzo: " <<address <<endl
-                <<"Media: " <<notes_sum/notes_amount <<endl;
+                <<"Media: " <<notes_sum/notes.size() <<endl;
+        }
+        //Print student notes.
+        void print_student_notes(){
+            int notes_amount = notes.size();
+
+            if(notes_amount != 0){
+                for(int i=0; i<notes_amount; i++){
+                    cout<<"Materia: " <<notes[i].subject <<endl;
+                    cout<<"Voto: " <<notes[i].note <<endl;
+                }
+            } else {
+                cout<<"Non sono stati registrati voti per questo studente." <<endl;
+            }
         }
         //Change student address.
         void change_address(string new_address){
@@ -85,6 +96,7 @@ class Classroom {
         //Add note to a student.
         void student_add_note(){
             int students_amount = students.size();
+
             if(students_amount != 0){
                 string surname;
                 vote new_vote;
@@ -109,6 +121,7 @@ class Classroom {
         //Print info about a student.
         void student_print_info(){
             int students_amount = students.size();
+
             if(students_amount != 0){
                 string surname;
 
@@ -125,12 +138,32 @@ class Classroom {
                 cout<<"Non sono stati inseriti studenti nella classe corrente." <<endl;
             }
         }
+        //Print notes about student.
+        void student_print_notes(){
+            int students_amount = students.size();
+
+            if(students_amount != 0){
+                string surname;
+
+                cout<<"Inserire il cognome dell'alunno: ";
+                cin>>surname;
+
+                for(int i=0; i<students_amount; i++){
+                    if(students[i].get_surname() == surname){
+                        students[i].print_student_notes();
+                        break;
+                    }
+                } 
+            } else {
+                cout<<"Non sono stati inseriti studenti nella classe corrente." <<endl;
+            }
+        }
 };
 
 int main(){
     //Classroom init.
     Classroom classroom("4BI");
-    
+
     //Menu.
     int option;
     do{
@@ -138,8 +171,8 @@ int main(){
             <<"- 0: Termina il programma." <<endl
             <<"- 1: Registra un nuovo studente." <<endl
             <<"- 2: Aggiungi un voto." <<endl 
-            <<"- 3: Visualizza le informazioni relative allo studente." <<endl
-            <<"- 4: Modifica l'indirizzo dello studente." <<endl;
+            <<"- 3: Visualizza le informazioni relative ad uno studente." <<endl
+            <<"- 4: Visualizza i voti relativi ad uno studente." <<endl;
 
         cout<<"Selezionare l'opzione desiderata: ";
         cin>>option;
@@ -157,6 +190,9 @@ int main(){
                 break;
             case 3:
                 classroom.student_print_info();
+                break;
+            case 4:
+                classroom.student_print_notes();
                 break;
             default:
                 cout<<"Opzione non disponibile." <<endl;
