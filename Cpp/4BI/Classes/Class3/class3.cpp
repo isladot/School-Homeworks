@@ -1,4 +1,5 @@
 #include <iostream>
+#include <fstream>
 #include <string>
 #include <vector>
 using namespace std;
@@ -118,6 +119,34 @@ class Classroom {
                 cout<<"Non sono stati inseriti studenti nella classe corrente." <<endl;
             }
         }
+        //Add multiple notes from file "[subject] [note]".
+        void student_add_multiple_notes(){
+            int students_amount = students.size();
+            
+            if(students_amount != 0){
+                string surname;
+                vote new_vote;
+                //Files
+                ifstream local_notes;
+                local_notes.open("student_notes.txt");
+
+                cout<<"Inserire il cognome dell'alunno: ";
+                cin>>surname;
+
+                for(int i=0; i<students_amount; i++){
+                    if(students[i].get_surname() == surname){
+                        //Read notes from file.
+                        while(!local_notes.eof()){
+                            local_notes>>new_vote.subject >>new_vote.note;
+                            students[i].add_note(new_vote);
+                        }
+                        break;
+                    }
+                } 
+            } else {
+                cout<<"Non sono stati inseriti studenti nella classe corrente." <<endl;
+            }
+        }
         //Print info about a student.
         void student_print_info(){
             int students_amount = students.size();
@@ -170,9 +199,10 @@ int main(){
         cout<<endl
             <<"- 0: Termina il programma." <<endl
             <<"- 1: Registra un nuovo studente." <<endl
-            <<"- 2: Aggiungi un voto." <<endl 
-            <<"- 3: Visualizza le informazioni relative ad uno studente." <<endl
-            <<"- 4: Visualizza i voti relativi ad uno studente." <<endl;
+            <<"- 2: Aggiungi un voto." <<endl
+            <<"- 3: Aggiungi una serie di voti da file." <<endl
+            <<"- 4: Visualizza le informazioni relative ad uno studente." <<endl
+            <<"- 5: Visualizza i voti relativi ad uno studente." <<endl;
 
         cout<<"Selezionare l'opzione desiderata: ";
         cin>>option;
@@ -189,9 +219,12 @@ int main(){
                 classroom.student_add_note();
                 break;
             case 3:
-                classroom.student_print_info();
+                classroom.student_add_multiple_notes();
                 break;
             case 4:
+                classroom.student_print_info();
+                break;
+            case 5:
                 classroom.student_print_notes();
                 break;
             default:
