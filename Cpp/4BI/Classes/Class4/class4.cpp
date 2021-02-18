@@ -48,6 +48,8 @@ class Store {
                     break;
                 }
             }
+
+            products_input.close();
         };
 
         //Sell a product.
