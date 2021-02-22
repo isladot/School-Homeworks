@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Strings3</title>
+    <script src="./script.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      body, input, button {
+        font-family: 'Montserrat';
+      }
+      input {
+        width: calc(200px - 9px);
+        height: 30px;
+        padding: 0 0 0 5px;
+        margin-bottom: 10px;
+      }
+      span {
+        margin-left: 10px;
+      }
+      button {
+        width: 200px;
+        height: 30px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="field">
+      <input type="text" id="name" /><span id="name-result"></span>
+    </div>
+    <div class="field">
+      <input type="text" id="surname" /><span id="surname-result"></span>
+    </div>
+    <button onclick="getResults()">Calculate!</button>
+  </body>
+</html>
