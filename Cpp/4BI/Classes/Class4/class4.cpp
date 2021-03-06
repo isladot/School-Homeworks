@@ -30,7 +30,7 @@ class Store {
     vector<product> products;
 
     public:
-        //Contructor.
+        //Constructor.
         Store(){
             product new_product;
             ifstream products_input;
