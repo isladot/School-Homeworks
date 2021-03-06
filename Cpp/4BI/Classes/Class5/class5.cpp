@@ -18,13 +18,19 @@ class Market {
         Market(string name, int sectors_amount){
             market_name = name;
 
-            for(int i=0; i<sectors_amount; i++){
-                sector new_sector;
+            if(sectors_amount > 0){
+                for(int i=0; i<sectors_amount; i++){
+                    sector new_sector;
 
-                cout<<"Inserire nome settore: ";
-                cin>>new_sector.name;
-                cout<<"Inserire bilancio settore: ";
-                cin>>new_sector.balance;
+                    cout<<"Inserire nome settore " <<i+1 <<": ";
+                    cin>>new_sector.name;
+                    cout<<"Inserire bilancio settore " <<i+1 <<": ";
+                    cin>>new_sector.balance;
+
+                    sectors.push_back(new_sector);
+                }
+            } else {
+                cout<<"Si prega di inserire almeno un settore." <<endl;
             }
         }
 
@@ -51,11 +57,13 @@ class Market {
                     break;
                 }
             }
+
+            return sector_balance;
         }
 
         void print_info(){
             cout<<"Nome supermecato: " <<market_name <<endl;
-            cout<<"Quantità reparti registrati: " <<sectors.size() <<endl;
+            cout<<"Quantita' reparti registrati: " <<sectors.size() <<endl;
         }
 };
 
@@ -70,7 +78,7 @@ int main(){
             <<"- 0: Termina il programma." <<endl
             <<"- 1: Registra un nuovo supermercato." <<endl
             <<"- 2: Visualizza la rendita di un supermercato." <<endl
-            <<"- 3: Visualizza le informzioni su un supermercato." <<endl
+            <<"- 3: Visualizza le informazioni su un supermercato." <<endl
             <<"- 4: Visualizza l'incasso di un singolo reparto di un supermercato." <<endl;
 
         cout<<"Selezionare l'opzione desiderata: ";
@@ -98,12 +106,13 @@ int main(){
                 {
                     string market_target;
 
-                    cout<<"Inserire il nome del supermercato da cercare: ";
+                    cout<<"Inserire il nome del supermercato: ";
                     cin>>market_target;
 
                     for(int i=0; i<markets.size(); i++){
                         if(markets[i].get_name() == market_target){
-                            markets[i].print_info();
+                            cout<<"Bilancio supermercato " <<market_target <<": " <<markets[i].get_balance() <<endl;
+                            break;
                         }
                     }
                 }
@@ -112,12 +121,12 @@ int main(){
                 {
                     string market_target;
 
-                    cout<<"Inserire il nome del supermercato da cercare: ";
+                    cout<<"Inserire il nome del supermercato: ";
                     cin>>market_target;
 
                     for(int i=0; i<markets.size(); i++){
                         if(markets[i].get_name() == market_target){
-                            markets[i].get_balance();
+                            markets[i].print_info();
                         }
                     }
                 }
@@ -134,9 +143,8 @@ int main(){
                         if(markets[i].get_name() == market_target){
                             cout<<"Inserire il nome del settore: ";
                             cin>>sector_target;
-
-                            markets[i].get_sector_balance(sector_target);
                             
+                            cout<<"Bilancio reparto " <<sector_target  <<": " <<markets[i].get_sector_balance(sector_target) <<endl;
                             break;
                         }
                     }
