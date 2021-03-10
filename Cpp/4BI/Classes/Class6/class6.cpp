@@ -36,7 +36,7 @@ class Terrain {
 };
 
 int main(){
-  //Market vectors init.
+  //Terrains vectors init.
   vector<Terrain> terrains;
 
   //Menu.
