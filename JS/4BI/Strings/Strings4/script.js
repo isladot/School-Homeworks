@@ -2,7 +2,9 @@ function checkFiscalCode() {
   let nameValue = document.getElementById('name').value.toLowerCase();
   let surnameValue = document.getElementById('surname').value.toLowerCase();
   let birthdayValue = document.getElementById('birthday').value.toLowerCase();
-  let fiscalCodeValue = document.getElementById('fiscal_code').value.toLowerCase();
+  let fiscalCodeValue = document
+    .getElementById('fiscal_code')
+    .value.toLowerCase();
 
   //Check input.
   if (
@@ -23,9 +25,9 @@ function checkFiscalCode() {
       fiscalCodeValue.substring(3, 6) ||
     birthdayValue.split('/')[2] != fiscalCodeValue.substring(6, 8)
   ) {
-    alert('Sono stati rilevati degli errori.')
+    alert('Sono stati rilevati degli errori.');
   } else {
-    alert('Codice fiscale inserito correttamente.')
+    alert('Codice fiscale inserito correttamente.');
   }
 }
 
