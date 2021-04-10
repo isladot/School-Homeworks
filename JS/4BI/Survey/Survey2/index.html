@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Survey2</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script src="./script.js"></script>
+  </head>
+  <body>
+    <h1>Scheduling dei processi e specifica dei requisiti:</h1>
+    <div class="questions-list">
+      <form class="question" id="ready-list">
+        <strong>La coda dei processi pronti (RL):</strong><br />
+        <input type="radio" id="q1a1" name="ready-list" /> Indica i processi
+        caricati in memoria ed in stato ready.<br />
+        <input type="radio" id="q1a2" name="ready-list" /> Indica i processi
+        pronti per essere caricati in memoria.<br />
+        <input type="radio" id="q1a3" name="ready-list" /> Indica i processi
+        pronti a ricevere risorse esterne.<br />
+      </form>
+      <form class="question" id="scheduling">
+        <strong>Algoritmi di scheduling, indica l'opzione sbagliata:</strong
+        ><br />
+        <input type="radio" id="q2a1" name="scheduling" />Il FCFS è un algoritmo
+        pre-emptive.<br />
+        <input type="radio" id="q2a2" name="scheduling" />Il FCFS e il FIFO sono
+        due algoritmi uguali.<br />
+        <input type="radio" id="q2a3" name="scheduling" />Il FCFS e il FIFO sono
+        entrambi algoritmi non pre-emptive.<br />
+      </form>
+      <form class="question" id="context-switch">
+        <strong>Context-switch, indica l'opzione corretta:</strong><br />
+        <input type="radio" id="q3a1" name="context-switch" />La parte del SO
+        che realizza il context-switch si chiama context switcher.<br />
+        <input type="radio" id="q3a2" name="context-switch" />Lo stack non viene
+        salvato.<br />
+        <input type="radio" id="q3a3" name="context-switch" />Il program counter
+        viene salvato.<br />
+      </form>
+      <form class="question" id="requirements">
+        <strong>La fase di specifica dei requisiti:</strong><br />
+        <input type="radio" id="q4a1" name="requirements" />Consiste in studio
+        di fattibilità e redazione di un documento sulle specifiche software.<br />
+        <input type="radio" id="q4a2" name="requirements" />Consiste
+        nell'analisi, studio delle funzionalita, redazione di un documento sulle
+        SRS, convalida delle specifiche.<br />
+        <input type="radio" id="q4a3" name="requirements" />Consiste nello
+        studio dei requisiti software.<br />
+      </form>
+      <form class="question" id="requirements-classification">
+        <strong
+          >Classificazione dei requisiti, indica l'opzione sbagliata:</strong
+        ><br />
+        <input type="radio" id="q5a1" name="requirements-classification" />Il
+        modello del dispositivo dell'utente finale è un requisito di sistema.<br />
+        <input type="radio" id="q5a2" name="requirements-classification" />I
+        requisiti di sistema e i requisiti chiusi indicano la stessa cosa.<br />
+        <input type="radio" id="q5a3" name="requirements-classification" />I
+        requisiti di sistema sono spesso scritti in linguaggio tecnico.<br />
+      </form>
+    </div>
+    <button onclick="calculate()">Calcola punteggio.</button>
+  </body>
+</html>
