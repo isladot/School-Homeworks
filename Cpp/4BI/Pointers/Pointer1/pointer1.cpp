@@ -2,21 +2,28 @@
 #include <string>
 using namespace std;
 
+// Record representing a list item.
 struct vehicle {
+  // Vehicle identifier.
   string ID;
+  // Vehicle cc.
   int cc;
   //Pointer
   vehicle *next;
 };
 
+// Cars class, acts as a list.
 class Cars {
+  // List "head" item.
   vehicle *first;
 
   public:
+    // Cars class constructor.
     Cars(){
       first = NULL;
     }
 
+    // Add an item to list.
     void push(string new_ID, int new_cc){
       vehicle *p;
 
@@ -27,6 +34,7 @@ class Cars {
       first = p;
     }
 
+    // Pop (remove) an item from list.
     void pop(){
       vehicle *p;
 
@@ -40,6 +48,7 @@ class Cars {
       }
     }
 
+    // Print list values.
     void print(){
       vehicle *p;
 
@@ -53,6 +62,7 @@ class Cars {
       }
     }
 
+    // Cars class deconstructor.
     ~Cars(){
       vehicle *p;
 
@@ -65,6 +75,7 @@ class Cars {
 };
 
 int main(){
+  // Cars list var.
   Cars garage;
 
   //Menu.
