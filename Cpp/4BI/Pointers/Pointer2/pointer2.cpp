@@ -72,10 +72,23 @@ class queue {
       cout<<"Non sono presenti pazienti in attesa." <<endl;
     } else {
       cout<<"Elenco pazienti in attesa:" <<endl;
-      for(p=head; p!=NULL; p->next){
+      for(p=head; p!=NULL; p=p->next){
         cout<<p->name <<"\t" <<p->num <<endl;
       }
     }
+  }
+
+  //Priority patients.
+  void push_priority(){
+    patient *p;
+    p = new(patient);
+
+    cout<<"Inserire nome paziente con priorita': ";
+    cin>>p->name;
+    p->num = num++;
+    cout<<"Il paziente " <<p->name <<" ha il numero " <<p->num <<endl; 
+    p->next = head;
+    head = p;   
   }
 
   ~queue(){
@@ -98,8 +111,9 @@ int main(){
         cout<<endl
             <<"- 0: Termina il programma." <<endl
             <<"- 1: Inserisci paziente." <<endl
-            <<"- 2: Rimuovi paziente." <<endl
-            <<"- 3: Visualizza elenco pazienti in attesa." <<endl;
+            <<"- 2: Inserisci paziente con priorita'." <<endl
+            <<"- 3: Rimuovi paziente." <<endl
+            <<"- 4: Visualizza elenco pazienti in attesa." <<endl;
 
         cout<<"Selezionare l'opzione desiderata: ";
         cin>>option;
@@ -113,9 +127,12 @@ int main(){
                 medical_office.push();
                 break;
             case 2:
-                medical_office.pop();
+                medical_office.push_priority();
                 break;
             case 3:
+                medical_office.pop();
+                break;
+            case 4:
                 medical_office.print();
                 break;
             default:
