@@ -19,6 +19,7 @@ class Schedule {
     end = NULL;
   }
 
+  // Add an activity to the queue.
   void add_activity(){
     activity *p;
     p = new(activity);
@@ -39,6 +40,7 @@ class Schedule {
     }
   }
 
+  // Remove an activity from the queue, specified by its own code.
   void remove_activity_by_code(int code){
     activity *p = NULL;
     activity *prec_p;
@@ -66,7 +68,7 @@ class Schedule {
     }
   }
 
-  //Printing elements.
+  // Print all activities in the queue.
   void print_activities(){
     activity *p;
 
@@ -80,6 +82,7 @@ class Schedule {
     }
   }
 
+  // Print all activites for a specific user.
   void print_activities_by_name(string name){
     activity *p = NULL;
 
