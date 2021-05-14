@@ -67,26 +67,39 @@ class Schedule {
   }
 
   //Printing elements.
-  void print(){
+  void print_activities(){
     activity *p;
 
     if(head == NULL){
-      cout<<"Non sono presenti attivita registrate." <<endl;
+      cout<<"Non sono presenti attivita registrate." <<endl <<endl;
     } else {
       cout<<"Elenco attivita registrate:" <<endl;
       for(p=head; p!=NULL; p=p->next){
-        cout<<p->code <<"\t" <<p->desc <<"\t" <<p->name <<endl;
+        cout<<"- " <<p->code <<"\t" <<p->desc <<"\t" <<p->name <<endl;
       }
     }
   }
 
-  /* void print_activities_by_name(string name){
-    activity* p;
+  void print_activities_by_name(string name){
+    activity *p = NULL;
 
     if(head == NULL){
-
+      cout<<"Non sono presenti attivita registrate." <<endl;
+      return;
+    } else {
+      cout<<"Elenco attivita registrate a nome di " <<name <<":" <<endl <<endl;
+      for(activity *i=head; i!=NULL; i=i->next){
+        if(i->name == name){
+          p = i;
+          cout<<"- " <<p->code <<"\t" <<p->desc <<"\t" <<p->name <<endl;
+        }
+      }
     }
-  } */
+
+    if(p == NULL){
+      cout<<"Non sono presenti attivita registrate a nome di " <<name <<"." <<endl;
+    }
+  }
 };
 
 int main(){
@@ -98,7 +111,9 @@ int main(){
     cout<<endl
         <<"- 0: Termina il programma." <<endl
         <<"- 1: Registra una nuova attivita." <<endl
-        <<"- 2: Elimina un'attivita specificando il codice." <<endl;
+        <<"- 2: Elimina un'attivita specificando il codice." <<endl
+        <<"- 3: Stampa tutte le attivita registrate." <<endl
+        <<"- 4: Stampa tutte le attivita specificando il nome del titolare." <<endl;
 
     cout<<"Selezionare l'opzione desiderata: ";
     cin>>option;
@@ -122,7 +137,17 @@ int main(){
         }
         break;
       case 3:
-        schedule.print();
+        schedule.print_activities();
+        break;
+      case 4:
+        {
+          string name;
+
+          cout<<"Inserire il nome del titolare delle attivita' da stampare: ";
+          cin>>name;
+
+          schedule.print_activities_by_name(name);
+        }
         break;
       default:
         cout<<"Opzione non disponibile." <<endl;
