@@ -56,8 +56,14 @@ class Schedule {
     if(p != NULL){
       if(head == NULL){
         cout<<"Non sono state registrate attivita." <<endl;
-      } else {
+      } else if(p != head) {
         prec_p->next = p->next;
+        if (p == NULL){
+          end = NULL;
+        }
+        delete p;
+      } else {
+        head = p->next;
         if (p == NULL){
           end = NULL;
         }
