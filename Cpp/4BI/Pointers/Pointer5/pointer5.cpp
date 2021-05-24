@@ -161,7 +161,7 @@ class AddressBook {
           cout<<i+1 <<": " <<contacts[i]->name <<" " <<contacts[i]->surname <<" " <<contacts[i]->tel <<endl;
         }
       } else {
-        cout<<"Nono sono presenti contatti lavorativi registrati." <<endl;
+        cout<<"Non sono presenti contatti lavorativi registrati." <<endl;
       }
     }
 
