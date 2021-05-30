@@ -1,14 +1,13 @@
 {
   "name": "homeworks",
   "version": "1.0.0",
-  "description": "School homeworks.",
-  "dependencies": {},
-  "devDependencies": {
-    "prettier": "^2.2.1"
-  },
+  "description": "Homeworks.",
+  "author": "isladot",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/isladot/homeworks.git"
   },
-  "author": "isladot"
+  "devDependencies": {
+    "prettier": "^2.3.0"
+  }
 }
