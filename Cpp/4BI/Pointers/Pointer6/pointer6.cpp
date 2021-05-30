@@ -1,20 +1,28 @@
+/*
+Un file contiene record di contatti telefonici, ogni record ha i seguenti campi:
+- Cognome, Nome,Tipo. Tipo può assumere 2 valori: “privato” o “lavoro”.
+- Scrivere un programma che legge il file ed inserisce i record in una coda.
+- Dalla precedente coda leggere i dati e inserirli in un array solo i contatti con Tipo=”privato”.
+- Ordinare l’array secondo il campo cognome,in ordine crescente, e stamparlo.
+*/
+
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <vector>
-#include <algorithm>
 using namespace std;
-
-enum ContactType { work, personal };
 
 struct contact {
   string name, surname;
-  ContactType contact_type;
+  /*
+   * w: "lavoro"
+   * p: "privato"
+  */
+  char contact_type;
   contact *next;
 };
 
 class AddressBook {
-  // Head, end elements.
   contact *head, *end;
 
   public:
@@ -27,32 +35,41 @@ class AddressBook {
     void get_contacts_from_file(){
       // Pointers.
       contact *p;
-      p = new(contact);
 
-      // File.
+      // Open file.
       ifstream input;
       input.open("input.txt");
 
-      
-
       // Read file.
       while(!input.eof()){
-        input>>p->name >>p->surname 
+        p = new(contact);
+
+        input>>p->name >>p->surname >>p->contact_type;
+        p->next = NULL;
+
+        if(p->name != ""){
+          if(head == NULL){
+            head = end = p;
+          } else {
+            end->next = p;
+            end = p;
+          }
+        }
       }
 
-
+      // Close file.
+      input.close();
     }
 
-    // Print sorted work contacts.
-    void save_sort_print_work(){
+    // Print sorted personal contacts.
+    void save_sort_print_personal(){
       vector<contact*> contacts;
 
       for(contact* i=head; i!=NULL; i=i->next){
-        if(i->contact_type == personal){
+        if(i->contact_type == 'p'){
           contacts.push_back(i);
         }
       }
-      
       
       contact* tmp;
       if(contacts.size() != 0){
@@ -68,7 +85,7 @@ class AddressBook {
 
         cout<<"Elenco contatti personali:" <<endl;
         for(int i=0; i<contacts.size(); i++){
-          cout<<i+1 <<": " <<contacts[i]->name <<" " <<contacts[i]->surname <<" " <<contacts[i]->tel <<endl;
+          cout<<i+1 <<": " <<contacts[i]->name <<" " <<contacts[i]->surname <<endl;
         }
       } else {
         cout<<"Non sono presenti contatti personali registrati." <<endl;
@@ -84,7 +101,7 @@ class AddressBook {
       } else {
         cout<<"Elenco contatti:" <<endl;
         for(p=head; p!=NULL; p=p->next){
-          cout<<"- " <<p->name <<" " <<p->surname <<" " <<p->tel <<" " <<p->contact_type <<endl;
+          cout<<"- " <<p->name <<" " <<p->surname  <<" " <<p->contact_type <<endl;
         }
       }
     }
@@ -98,12 +115,9 @@ int main(){
   do{
     cout<<endl
         <<"- 0: Termina il programma." <<endl
-        <<"- 1: Registra un nuovo contatto." <<endl
-        <<"- 2: Salva su file i contatti personali." <<endl
-        <<"- 3: Salva su un array, ordina e stampa i contatti lavorativi." <<endl
-        <<"- 4: Elimina un contatto, fornendo in input nome e cognome." <<endl
-        <<"- 5: Inserisci un contatto nella posizione successiva a quella fornita in input." <<endl
-        <<"- 6: Stampa tutti i contatti." <<endl;
+        <<"- 1: Registra nuovi contatti da file." <<endl
+        <<"- 2: Salva su un array, ordina e stampa i contatti personali." <<endl
+        <<"- 3: Stampa tutti i contatti."<<endl ;
 
     cout<<"Selezionare l'opzione desiderata: ";
     cin>>option;
@@ -114,37 +128,12 @@ int main(){
         cout<<"Chiusura del programma in corso.." <<endl;
         break;
       case 1:
-        address_book.new_contact();
+        address_book.get_contacts_from_file();
         break;
       case 2:
-        address_book.save_personal_on_file();
+        address_book.save_sort_print_personal();
         break;
       case 3:
-        address_book.save_sort_print_work();
-        break;
-      case 4:
-        {
-          string name, surname;
-
-          cout<<"Inserire nome contatto da eliminare: ";
-          cin>>name;
-          cout<<"Inserire cognome contatto da eliminare: ";
-          cin>>surname;
-
-          address_book.delete_contact(name, surname); 
-        }
-        break;   
-      case 5:
-        {
-          int pos;
-
-          cout<<"Inserire la posizione del contatto precedente a quello che si vuole inserire: ";
-          cin>>pos;
-
-          address_book.add_contact_by_previous_pos(pos);
-        }
-        break;
-      case 6:
         address_book.print_contacts();
         break;
       default:
