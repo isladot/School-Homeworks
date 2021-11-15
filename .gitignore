@@ -1,11 +1,16 @@
-#Visual Studio Code related Files.
+# Editors related files.
 .vscode
+.idea
 
-#C++ compiled files.
+# C++ compiled files.
 *.exe
 
-#C++ txt files.
+# C++ txt files.
 Cpp/**/*.txt
 
-#Node modules.
+# Java iml and class files.
+java/**/*.iml
+java/**/*.class
+
+# Node modules.
 node_modules
