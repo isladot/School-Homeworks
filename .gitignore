@@ -14,3 +14,6 @@ java/**/*.class
 
 # Node modules.
 node_modules
+
+# MacOS shitty files.
+.DS_Store
