@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="signup.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap"
+      rel="stylesheet"
+    />
+    <title>Registrazione</title>
+  </head>
+  <body>
+    <center>
+      <h1>Registrazione</h1>
+      <form action="signup.php" method="POST">
+        Username:
+        <input type="text" name="username" />
+        <br />
+        Password:
+        <input type="password" name="password" />
+        <br />
+        Genere:
+        <input type="radio" name="genere" value="uomo" /> Uomo
+        <input type="radio" name="genere" value="donna" /> Donna
+        <input type="radio" name="genere" value="altro" /> Altro
+        <br />
+        Maggiorenne:
+        <input type="checkbox" name="maggiorenne" />
+        <br />
+        Interesse:
+        <select name="interesse">
+          <option value="musica">Musica</option>
+          <option value="animali">Sport</option>
+          <option value="informatica">Informatica</option>
+        </select>
+        <br />
+        <input type="submit" value="Registrati" />
+        <input type="reset" value="Reset" />
+      </form>
+    </center>
+  </body>
+</html>

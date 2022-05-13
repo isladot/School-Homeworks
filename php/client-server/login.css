@@ -1,0 +1,10 @@
+body {
+  font-family: 'Montserrat';
+  text-align: center;
+}
+input,
+select,
+button {
+  margin-bottom: 10px;
+  font-family: 'Montserrat';
+}

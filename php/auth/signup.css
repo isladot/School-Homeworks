@@ -1,0 +1,18 @@
+body {
+  font-family: "Montserrat";
+  display: flex;
+  justify-content: center;
+}
+input,
+select,
+button {
+  margin-bottom: 10px;
+  font-family: "Montserrat";
+}
+
+table {
+  text-align: start;
+}
+.error {
+  color: red;
+}
